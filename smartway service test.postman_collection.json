@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "c76b0b98-2d12-444a-878d-190e165d8496",
+		"name": "smartway service test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35363782"
+	},
+	"item": [
+		{
+			"name": "/Employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"Владимир\",\r\n    \"Surname\": \"Булгаков\",\r\n    \"Phone\": \"+7 775 553 35 53\",\r\n    \"CompanyID\": 3,\r\n    \"DepartmentID\": 3,\r\n    \"Passport\": {\r\n        \"Type\": \"Type 1\",\r\n        \"Number\": \"223345\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/Employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"Employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/Employees",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ID\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/Employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"Employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ListEmployeesByCompany",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CompanyID\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/ListEmployeesByCompany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"ListEmployeesByCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/getEmployeesByComDepId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DepartmentID\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8888/ListEmployeesByComDep",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"ListEmployeesByComDep"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/UpdateUserByID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ID\": 3,\r\n    \"surname\": \"Орлова\",\r\n    \"phone\": \"+7 903 876 54 56\",\r\n    \"passport\": {\r\n        \"type\": \"Type 2\",\r\n        \"number\": \"665544\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/UpdateUserByID",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"UpdateUserByID"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
