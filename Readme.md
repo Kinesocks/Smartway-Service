@@ -7,7 +7,7 @@ $Env:GOOS = "linux"; $Env:CGO_ENABLED=0
 ```
 для Linux:
 ```
-CGO_ENABLED=0 GOOS=linux go
+CGO_ENABLED=0 GOOS=linux
 ```
 Далее компиляция:
 ```
