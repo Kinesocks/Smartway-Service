@@ -1,0 +1,28 @@
+services:
+    db:
+        container_name: pg_db
+        image: postgres:14.12-alpine3.20
+        environment:
+            POSTGRES_USER: root
+            POSTGRES_PASSWORD: root
+            POSTGRES_DB: my_db
+        volumes:
+            - ./postgres_data:/var/lib/postgresql/data/
+        ports:
+            - "5432:5432"
+
+    pgadmin:
+        container_name: pgadmin
+        image: dpage/pgadmin4:latest
+        environment:
+            PGADMIN_DEFAULT_EMAIL: user@user.com
+            PGADMIN_DEFAULT_PASSWORD: root
+        ports:
+            - "5050:80"
+    app:
+        container_name: smartway_service
+        image: smartway_service:latest
+        ports:
+            - "8888:8888"
+        links:
+            - db
